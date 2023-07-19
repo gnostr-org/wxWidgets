@@ -17,6 +17,12 @@
 //No help, variable specified on the command line.
 BUILD_STATIC:UNINITIALIZED=OFF
 
+//Path to a file.
+CAIRO_INCLUDE_DIRS:PATH=/usr/local/Cellar/cairo/1.16.0_5/include/cairo
+
+//Path to a library.
+CAIRO_LIBRARIES:FILEPATH=/usr/local/Cellar/cairo/1.16.0_5/lib/libcairo.dylib
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -243,7 +249,19 @@ CMAKE_STRIP:FILEPATH=/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Develop
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
-CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+CMAKE_VERBOSE_MAKEFILE:BOOL=ON
+
+//The directory containing a CMake configuration file for CURL.
+CURL_DIR:PATH=CURL_DIR-NOTFOUND
+
+//Path to a file.
+CURL_INCLUDE_DIR:PATH=/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/include
+
+//Path to a library.
+CURL_LIBRARY_DEBUG:FILEPATH=CURL_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+CURL_LIBRARY_RELEASE:FILEPATH=/usr/lib/libcurl.dylib
 
 //Path to a program.
 EGREP:FILEPATH=/usr/bin/egrep
@@ -291,13 +309,19 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 ZLIB_LIBRARY_RELEASE:FILEPATH=/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd
 
 //Path to a library.
+pkgcfg_lib_PC_CAIRO_cairo:FILEPATH=/usr/local/Cellar/cairo/1.16.0_5/lib/libcairo.dylib
+
+//Path to a library.
+pkgcfg_lib_PC_CURL_curl:FILEPATH=/usr/lib/libcurl.dylib
+
+//Path to a library.
 pkgcfg_lib_PC_EXPAT_expat:FILEPATH=/usr/lib/libexpat.dylib
 
 //Build benchmarks
 wxBUILD_BENCHMARKS:BOOL=OFF
 
 //enable compatibilty with earlier wxWidgets versions
-wxBUILD_COMPATIBILITY:STRING=3.0
+wxBUILD_COMPATIBILITY:STRING=3.2
 
 //Include path containing custom wx/setup.h
 wxBUILD_CUSTOM_SETUP_HEADER_PATH:PATH=
@@ -385,7 +409,7 @@ wxUSE_ARTPROVIDER_TANGO:BOOL=ON
 wxUSE_AUI:BOOL=ON
 
 //use automatic ids management
-wxUSE_AUTOID_MANAGEMENT:BOOL=OFF
+wxUSE_AUTOID_MANAGEMENT:BOOL=ON
 
 //use wxBannerWindow class
 wxUSE_BANNERWINDOW:BOOL=ON
@@ -406,7 +430,7 @@ wxUSE_BUSYINFO:BOOL=ON
 wxUSE_BUTTON:BOOL=ON
 
 //enable Cairo graphics context
-wxUSE_CAIRO:BOOL=OFF
+wxUSE_CAIRO:BOOL=ON
 
 //use wxCalendarCtrl class
 wxUSE_CALENDARCTRL:BOOL=ON
@@ -820,7 +844,7 @@ wxUSE_REARRANGECTRL:BOOL=ON
 wxUSE_REGEX:STRING=builtin
 
 //enable reproducable build
-wxUSE_REPRODUCIBLE_BUILD:BOOL=OFF
+wxUSE_REPRODUCIBLE_BUILD:BOOL=ON
 
 //use wxRibbon library
 wxUSE_RIBBON:BOOL=ON
@@ -911,10 +935,10 @@ wxUSE_STD_IOSTREAM:BOOL=ON
 
 //provide implicit conversions to std::wstring and std::string
 // in wxString
-wxUSE_STD_STRING_CONV_IN_WXSTRING:BOOL=OFF
+wxUSE_STD_STRING_CONV_IN_WXSTRING:BOOL=ON
 
 //use standard C++ classes for everything
-wxUSE_STL:BOOL=OFF
+wxUSE_STL:BOOL=ON
 
 //use wxStopWatch class
 wxUSE_STOPWATCH:BOOL=ON
@@ -995,7 +1019,7 @@ wxUSE_UIACTIONSIMULATOR:BOOL=ON
 wxUSE_UNICODE:BOOL=ON
 
 //use UTF-8 representation for strings (Unix only)
-wxUSE_UNICODE_UTF8:BOOL=OFF
+wxUSE_UNICODE_UTF8:BOOL=ON
 
 //provide unsafe implicit conversions in wxString to const char*
 // or std::string
@@ -1003,6 +1027,9 @@ wxUSE_UNSAFE_WXSTRING_CONV:BOOL=ON
 
 //use wxURL class
 wxUSE_URL:BOOL=ON
+
+//only support UTF-8 locales in UTF-8 build
+wxUSE_UTF8_LOCALE_ONLY:BOOL=ON
 
 //use wxValidator and derived classes
 wxUSE_VALIDATORS:BOOL=ON
@@ -1017,7 +1044,7 @@ wxUSE_VISIBILITY:BOOL=ON
 wxUSE_WEBREQUEST:BOOL=ON
 
 //use wxWebRequest libcurl backend
-wxUSE_WEBREQUEST_CURL:BOOL=OFF
+wxUSE_WEBREQUEST_CURL:BOOL=ON
 
 //use wxWebRequest URLSession backend
 wxUSE_WEBREQUEST_URLSESSION:BOOL=ON
@@ -1089,7 +1116,7 @@ wxmedia_LIB_DEPENDS:STATIC=general;wxbase;general;wxcore;general;-framework AVFo
 wxmono_LIB_DEPENDS:STATIC=general;/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd;general;wxregex;general;/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libiconv.tbd;general;-framework Security;general;wxjpeg;general;wxpng;general;wxscintilla;general;wxlexilla;general;/usr/lib/libexpat.dylib;general;-framework CoreFoundation;general;-framework Carbon;general;-framework Cocoa;general;-framework IOKit;general;-framework QuartzCore;general;-framework AudioToolbox;general;-framework WebKit;general;-framework WebKit;general;-framework AVFoundation;general;-framework CoreMedia;general;-weak_framework AVKit;general;OpenGL::GLU;general;OpenGL::GL;general;/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework;general;/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/OpenGL.framework;
 
 //Dependencies for the target
-wxnet_LIB_DEPENDS:STATIC=general;wxbase;
+wxnet_LIB_DEPENDS:STATIC=general;wxbase;general;/usr/lib/libcurl.dylib;
 
 //Dependencies for the target
 wxpng_LIB_DEPENDS:STATIC=general;/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libz.tbd;
@@ -1126,6 +1153,10 @@ wxxrc_LIB_DEPENDS:STATIC=general;wxbase;general;wxcore;general;wxhtml;general;wx
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: CAIRO_INCLUDE_DIRS
+CAIRO_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CAIRO_LIBRARIES
+CAIRO_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -1283,12 +1314,26 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: CMAKE_VERBOSE_MAKEFILE
+CMAKE_VERBOSE_MAKEFILE-MODIFIED:INTERNAL=ON
+//ADVANCED property for variable: CURL_DIR
+CURL_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_INCLUDE_DIR
+CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_LIBRARY_DEBUG
+CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CURL_LIBRARY_RELEASE
+CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: EGREP
 EGREP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: EXPAT_INCLUDE_DIR
 EXPAT_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: EXPAT_LIBRARY
 EXPAT_LIBRARY-ADVANCED:INTERNAL=1
+//Details about finding CURL
+FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/libcurl.dylib][/Users/Shared/XcodeVersions/Xcode@12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/include][c ][v7.64.1()]
+//Details about finding Cairo
+FIND_PACKAGE_MESSAGE_DETAILS_Cairo:INTERNAL=[/usr/local/Cellar/cairo/1.16.0_5/include/cairo][/usr/local/Cellar/cairo/1.16.0_5/lib/libcairo.dylib][TRUE][v()]
 //Details about finding EXPAT
 FIND_PACKAGE_MESSAGE_DETAILS_EXPAT:INTERNAL=[/usr/lib/libexpat.dylib][/Library/Frameworks/Mono.framework/Headers][v2.2.5()]
 //Details about finding OpenGL
@@ -1516,6 +1561,76 @@ OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glu_LIBRARY
 OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+PC_CAIRO_CFLAGS:INTERNAL=-I/usr/local/Cellar/cairo/1.16.0_5/include/cairo;-I/usr/local/Cellar/glib/2.76.1/include;-I/usr/local/Cellar/glib/2.76.1/include/glib-2.0;-I/usr/local/Cellar/glib/2.76.1/lib/glib-2.0/include;-I/usr/local/opt/gettext/include;-I/usr/local/Cellar/pcre2/10.42/include;-I/usr/local/Cellar/pixman/0.42.2/include/pixman-1;-I/usr/local/Cellar/fontconfig/2.14.2/include;-I/usr/local/opt/freetype/include/freetype2;-I/usr/local/opt/libpng/include/libpng16;-I/usr/local/Cellar/libxcb/1.15_1/include;-I/usr/local/Cellar/libxrender/0.9.11/include;-I/usr/local/Cellar/libxext/1.3.5/include;-I/usr/local/Cellar/libx11/1.8.4/include;-I/usr/local/Cellar/libxcb/1.15_1/include;-I/usr/local/Cellar/libxau/1.0.11/include;-I/usr/local/Cellar/libxdmcp/1.1.4/include;-I/usr/local/Cellar/xorgproto/2022.2/include;-I/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/ffi
+PC_CAIRO_CFLAGS_I:INTERNAL=
+PC_CAIRO_CFLAGS_OTHER:INTERNAL=
+PC_CAIRO_FOUND:INTERNAL=1
+PC_CAIRO_INCLUDEDIR:INTERNAL=/usr/local/Cellar/cairo/1.16.0_5/include
+PC_CAIRO_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/cairo/1.16.0_5/include/cairo;/usr/local/Cellar/glib/2.76.1/include;/usr/local/Cellar/glib/2.76.1/include/glib-2.0;/usr/local/Cellar/glib/2.76.1/lib/glib-2.0/include;/usr/local/opt/gettext/include;/usr/local/Cellar/pcre2/10.42/include;/usr/local/Cellar/pixman/0.42.2/include/pixman-1;/usr/local/Cellar/fontconfig/2.14.2/include;/usr/local/opt/freetype/include/freetype2;/usr/local/opt/libpng/include/libpng16;/usr/local/Cellar/libxcb/1.15_1/include;/usr/local/Cellar/libxrender/0.9.11/include;/usr/local/Cellar/libxext/1.3.5/include;/usr/local/Cellar/libx11/1.8.4/include;/usr/local/Cellar/libxcb/1.15_1/include;/usr/local/Cellar/libxau/1.0.11/include;/usr/local/Cellar/libxdmcp/1.1.4/include;/usr/local/Cellar/xorgproto/2022.2/include;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/ffi
+PC_CAIRO_LDFLAGS:INTERNAL=-L/usr/local/Cellar/cairo/1.16.0_5/lib;-lcairo
+PC_CAIRO_LDFLAGS_OTHER:INTERNAL=
+PC_CAIRO_LIBDIR:INTERNAL=/usr/local/Cellar/cairo/1.16.0_5/lib
+PC_CAIRO_LIBRARIES:INTERNAL=cairo
+PC_CAIRO_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/cairo/1.16.0_5/lib
+PC_CAIRO_LIBS:INTERNAL=
+PC_CAIRO_LIBS_L:INTERNAL=
+PC_CAIRO_LIBS_OTHER:INTERNAL=
+PC_CAIRO_LIBS_PATHS:INTERNAL=
+PC_CAIRO_MODULE_NAME:INTERNAL=cairo
+PC_CAIRO_PREFIX:INTERNAL=/usr/local/Cellar/cairo/1.16.0_5
+PC_CAIRO_STATIC_CFLAGS:INTERNAL=-I/usr/local/Cellar/cairo/1.16.0_5/include/cairo;-I/usr/local/Cellar/glib/2.76.1/include;-I/usr/local/Cellar/glib/2.76.1/include/glib-2.0;-I/usr/local/Cellar/glib/2.76.1/lib/glib-2.0/include;-I/usr/local/opt/gettext/include;-I/usr/local/Cellar/pcre2/10.42/include;-I/usr/local/Cellar/pixman/0.42.2/include/pixman-1;-I/usr/local/Cellar/fontconfig/2.14.2/include;-I/usr/local/opt/freetype/include/freetype2;-I/usr/local/opt/libpng/include/libpng16;-I/usr/local/Cellar/libxcb/1.15_1/include;-I/usr/local/Cellar/libxrender/0.9.11/include;-I/usr/local/Cellar/libxext/1.3.5/include;-I/usr/local/Cellar/libx11/1.8.4/include;-I/usr/local/Cellar/libxcb/1.15_1/include;-I/usr/local/Cellar/libxau/1.0.11/include;-I/usr/local/Cellar/libxdmcp/1.1.4/include;-I/usr/local/Cellar/xorgproto/2022.2/include;-I/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/ffi
+PC_CAIRO_STATIC_CFLAGS_I:INTERNAL=
+PC_CAIRO_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_CAIRO_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/cairo/1.16.0_5/include/cairo;/usr/local/Cellar/glib/2.76.1/include;/usr/local/Cellar/glib/2.76.1/include/glib-2.0;/usr/local/Cellar/glib/2.76.1/lib/glib-2.0/include;/usr/local/opt/gettext/include;/usr/local/Cellar/pcre2/10.42/include;/usr/local/Cellar/pixman/0.42.2/include/pixman-1;/usr/local/Cellar/fontconfig/2.14.2/include;/usr/local/opt/freetype/include/freetype2;/usr/local/opt/libpng/include/libpng16;/usr/local/Cellar/libxcb/1.15_1/include;/usr/local/Cellar/libxrender/0.9.11/include;/usr/local/Cellar/libxext/1.3.5/include;/usr/local/Cellar/libx11/1.8.4/include;/usr/local/Cellar/libxcb/1.15_1/include;/usr/local/Cellar/libxau/1.0.11/include;/usr/local/Cellar/libxdmcp/1.1.4/include;/usr/local/Cellar/xorgproto/2022.2/include;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/ffi
+PC_CAIRO_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/cairo/1.16.0_5/lib;-L/usr/local/Cellar/glib/2.76.1/lib;-L/usr/local/opt/gettext/lib;-L/usr/local/Cellar/pcre2/10.42/lib;-L/usr/local/Cellar/pixman/0.42.2/lib;-L/usr/local/Cellar/fontconfig/2.14.2/lib;-L/usr/local/opt/freetype/lib;-L/usr/local/opt/libpng/lib;-L/usr/local/Cellar/libxcb/1.15_1/lib;-L/usr/local/Cellar/libxrender/0.9.11/lib;-L/usr/local/Cellar/libxext/1.3.5/lib;-L/usr/local/Cellar/libx11/1.8.4/lib;-L/usr/local/Cellar/libxcb/1.15_1/lib;-L/usr/local/Cellar/libxau/1.0.11/lib;-L/usr/local/Cellar/libxdmcp/1.1.4/lib;-L/usr/lib;-lcairo;-lz;-lgobject-2.0;-lintl;-lffi;-lglib-2.0;-lintl;-liconv;-lm;-framework;Foundation;-framework;CoreFoundation;-framework;AppKit;-framework;Carbon;-lpcre2-8;-D_THREAD_SAFE;-pthread;-lpixman-1;-lfontconfig;-lexpat;-lfreetype;-lbz2;-lpng16;-lz;-lxcb-shm;-lxcb-render;-lXrender;-lXext;-lX11;-lxcb;-lXau;-lXdmcp
+PC_CAIRO_STATIC_LDFLAGS_OTHER:INTERNAL=-framework;Foundation;-framework;CoreFoundation;-framework;AppKit;-framework;Carbon;-D_THREAD_SAFE;-pthread
+PC_CAIRO_STATIC_LIBDIR:INTERNAL=
+PC_CAIRO_STATIC_LIBRARIES:INTERNAL=cairo;z;gobject-2.0;intl;ffi;glib-2.0;intl;iconv;m;pcre2-8;pixman-1;fontconfig;expat;freetype;bz2;png16;z;xcb-shm;xcb-render;Xrender;Xext;X11;xcb;Xau;Xdmcp
+PC_CAIRO_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/cairo/1.16.0_5/lib;/usr/local/Cellar/glib/2.76.1/lib;/usr/local/opt/gettext/lib;/usr/local/Cellar/pcre2/10.42/lib;/usr/local/Cellar/pixman/0.42.2/lib;/usr/local/Cellar/fontconfig/2.14.2/lib;/usr/local/opt/freetype/lib;/usr/local/opt/libpng/lib;/usr/local/Cellar/libxcb/1.15_1/lib;/usr/local/Cellar/libxrender/0.9.11/lib;/usr/local/Cellar/libxext/1.3.5/lib;/usr/local/Cellar/libx11/1.8.4/lib;/usr/local/Cellar/libxcb/1.15_1/lib;/usr/local/Cellar/libxau/1.0.11/lib;/usr/local/Cellar/libxdmcp/1.1.4/lib;/usr/lib
+PC_CAIRO_STATIC_LIBS:INTERNAL=
+PC_CAIRO_STATIC_LIBS_L:INTERNAL=
+PC_CAIRO_STATIC_LIBS_OTHER:INTERNAL=
+PC_CAIRO_STATIC_LIBS_PATHS:INTERNAL=
+PC_CAIRO_VERSION:INTERNAL=1.16.0
+PC_CAIRO_cairo_INCLUDEDIR:INTERNAL=
+PC_CAIRO_cairo_LIBDIR:INTERNAL=
+PC_CAIRO_cairo_PREFIX:INTERNAL=
+PC_CAIRO_cairo_VERSION:INTERNAL=
+PC_CURL_CFLAGS:INTERNAL=
+PC_CURL_CFLAGS_I:INTERNAL=
+PC_CURL_CFLAGS_OTHER:INTERNAL=
+PC_CURL_FOUND:INTERNAL=1
+PC_CURL_INCLUDEDIR:INTERNAL=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
+PC_CURL_INCLUDE_DIRS:INTERNAL=
+PC_CURL_LDFLAGS:INTERNAL=-L/usr/lib;-lcurl
+PC_CURL_LDFLAGS_OTHER:INTERNAL=
+PC_CURL_LIBDIR:INTERNAL=/usr/lib
+PC_CURL_LIBRARIES:INTERNAL=curl
+PC_CURL_LIBRARY_DIRS:INTERNAL=/usr/lib
+PC_CURL_LIBS:INTERNAL=
+PC_CURL_LIBS_L:INTERNAL=
+PC_CURL_LIBS_OTHER:INTERNAL=
+PC_CURL_LIBS_PATHS:INTERNAL=
+PC_CURL_MODULE_NAME:INTERNAL=libcurl
+PC_CURL_PREFIX:INTERNAL=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr
+PC_CURL_STATIC_CFLAGS:INTERNAL=
+PC_CURL_STATIC_CFLAGS_I:INTERNAL=
+PC_CURL_STATIC_CFLAGS_OTHER:INTERNAL=
+PC_CURL_STATIC_INCLUDE_DIRS:INTERNAL=
+PC_CURL_STATIC_LDFLAGS:INTERNAL=-L/usr/lib;-lcurl;-lldap;-lz
+PC_CURL_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_CURL_STATIC_LIBDIR:INTERNAL=
+PC_CURL_STATIC_LIBRARIES:INTERNAL=curl;ldap;z
+PC_CURL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib
+PC_CURL_STATIC_LIBS:INTERNAL=
+PC_CURL_STATIC_LIBS_L:INTERNAL=
+PC_CURL_STATIC_LIBS_OTHER:INTERNAL=
+PC_CURL_STATIC_LIBS_PATHS:INTERNAL=
+PC_CURL_VERSION:INTERNAL=7.64.1
+PC_CURL_libcurl_INCLUDEDIR:INTERNAL=
+PC_CURL_libcurl_LIBDIR:INTERNAL=
+PC_CURL_libcurl_PREFIX:INTERNAL=
+PC_CURL_libcurl_VERSION:INTERNAL=
 PC_EXPAT_CFLAGS:INTERNAL=
 PC_EXPAT_CFLAGS_I:INTERNAL=
 PC_EXPAT_CFLAGS_OTHER:INTERNAL=
@@ -1583,14 +1698,24 @@ ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
 ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
 ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+__pkg_config_arguments_PC_CAIRO:INTERNAL=QUIET;cairo
+__pkg_config_arguments_PC_CURL:INTERNAL=QUIET;libcurl
 __pkg_config_arguments_PC_EXPAT:INTERNAL=QUIET;expat
 __pkg_config_checked_GTK3:INTERNAL=1
+__pkg_config_checked_PC_CAIRO:INTERNAL=1
+__pkg_config_checked_PC_CURL:INTERNAL=1
 __pkg_config_checked_PC_EXPAT:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_CAIRO_cairo
+pkgcfg_lib_PC_CAIRO_cairo-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_CURL_curl
+pkgcfg_lib_PC_CURL_curl-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_EXPAT_expat
 pkgcfg_lib_PC_EXPAT_expat-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=/usr/lib
+prefix_result:INTERNAL=AsynchDNS;IPv6;Largefile;GSS-API;Kerberos;SPNEGO;MultiSSL;NTLM;NTLM_WB;SSL;libz;HTTP2;UnixSockets;HTTPS-proxy
 //ADVANCED property for variable: wxBUILD_COMPATIBILITY
 wxBUILD_COMPATIBILITY-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: wxBUILD_COMPATIBILITY
+wxBUILD_COMPATIBILITY-MODIFIED:INTERNAL=ON
 //STRINGS property for variable: wxBUILD_COMPATIBILITY
 wxBUILD_COMPATIBILITY-STRINGS:INTERNAL=3.0;3.2;NONE
 //ADVANCED property for variable: wxBUILD_CUSTOM_SETUP_HEADER_PATH
@@ -1676,6 +1801,8 @@ wxUSE_ARTPROVIDER_TANGO-ADVANCED:INTERNAL=1
 wxUSE_AUI-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_AUTOID_MANAGEMENT
 wxUSE_AUTOID_MANAGEMENT-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: wxUSE_AUTOID_MANAGEMENT
+wxUSE_AUTOID_MANAGEMENT-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: wxUSE_BANNERWINDOW
 wxUSE_BANNERWINDOW-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_BASE64
@@ -1690,6 +1817,8 @@ wxUSE_BUSYINFO-ADVANCED:INTERNAL=1
 wxUSE_BUTTON-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_CAIRO
 wxUSE_CAIRO-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: wxUSE_CAIRO
+wxUSE_CAIRO-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: wxUSE_CALENDARCTRL
 wxUSE_CALENDARCTRL-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_CARET
@@ -1978,6 +2107,8 @@ wxUSE_REGEX-ADVANCED:INTERNAL=1
 wxUSE_REGEX-STRINGS:INTERNAL=builtin;sys;OFF
 //ADVANCED property for variable: wxUSE_REPRODUCIBLE_BUILD
 wxUSE_REPRODUCIBLE_BUILD-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: wxUSE_REPRODUCIBLE_BUILD
+wxUSE_REPRODUCIBLE_BUILD-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: wxUSE_RIBBON
 wxUSE_RIBBON-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_RICHMSGDLG
@@ -2038,8 +2169,12 @@ wxUSE_STD_CONTAINERS-ADVANCED:INTERNAL=1
 wxUSE_STD_IOSTREAM-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_STD_STRING_CONV_IN_WXSTRING
 wxUSE_STD_STRING_CONV_IN_WXSTRING-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: wxUSE_STD_STRING_CONV_IN_WXSTRING
+wxUSE_STD_STRING_CONV_IN_WXSTRING-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: wxUSE_STL
 wxUSE_STL-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: wxUSE_STL
+wxUSE_STL-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: wxUSE_STOPWATCH
 wxUSE_STOPWATCH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_STREAMS
@@ -2094,10 +2229,14 @@ wxUSE_UIACTIONSIMULATOR-ADVANCED:INTERNAL=1
 wxUSE_UNICODE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_UNICODE_UTF8
 wxUSE_UNICODE_UTF8-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: wxUSE_UNICODE_UTF8
+wxUSE_UNICODE_UTF8-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: wxUSE_UNSAFE_WXSTRING_CONV
 wxUSE_UNSAFE_WXSTRING_CONV-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_URL
 wxUSE_URL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: wxUSE_UTF8_LOCALE_ONLY
+wxUSE_UTF8_LOCALE_ONLY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_VALIDATORS
 wxUSE_VALIDATORS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_VARIANT
@@ -2108,6 +2247,8 @@ wxUSE_VISIBILITY-ADVANCED:INTERNAL=1
 wxUSE_WEBREQUEST-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_WEBREQUEST_CURL
 wxUSE_WEBREQUEST_CURL-ADVANCED:INTERNAL=1
+//MODIFIED property for variable: wxUSE_WEBREQUEST_CURL
+wxUSE_WEBREQUEST_CURL-MODIFIED:INTERNAL=ON
 //ADVANCED property for variable: wxUSE_WEBREQUEST_URLSESSION
 wxUSE_WEBREQUEST_URLSESSION-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: wxUSE_WEBVIEW
