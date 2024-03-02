@@ -701,3 +701,5 @@ include/wx/setup.h
 utils/ifacecheck/rungccxml.sh
 utils/wxrc/.deps/
 utils/wxrc/wxrc
+
+**.DS_Store
